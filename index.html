@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGHODEST COMPANY LIMITED - Environmental & Geophysics Solutions</title>
+
+    <style>
+        /* ==================== GLOBAL ==================== */
+        :root {
+            --primary: #6200ea;
+            --primary-dark: #3700b3;
+            --dark-blue: #16276a;
+            --light-bg: #f4f4f9;
+            --text: #333;
+            --accent: #9d7dff;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ==================== HEADER & NAV ==================== */
+        header {
+            background: linear-gradient(135deg, #6200ea 0%, #3700b3 100%);
+            color: var(--white);
+            padding: 5em 1em 3.0em;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        header img {
+            position: absolute;
+            top: 0.3em;
+            left: 2em;
+            height: 180px;
+            width: auto;
+            max-width: 100%;
+        }
+
+        header h2 {
+            color: var(--white);                    /* Explicit white */
+            font-size: 2.6em;
+            font-weight: 800;
+            margin: 0.4em 0 0;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.6); /* Stronger shadow for contrast */
+            line-height: 1.1;
+        }
+
+        nav {
+            background-color: var(--primary-dark);
+            padding: 1.2em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.8em;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==================== MAIN ==================== */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2em 1.5em;
+        }
+
+        h1, h2 {
+            color: var(--primary-dark);
+        }
+
+        .marquee {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1.2em;
+            overflow: hidden;
+            white-space: nowrap;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .marquee p {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 28s linear infinite;
+        }
+
+        @keyframes marquee {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Slider */
+        .image-slider {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            margin: 2.5em 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .image-slider img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation: slide 20s infinite;
+        }
+
+        .image-slider img:nth-child(2) { animation-delay: 5s; }
+        .image-slider img:nth-child(3) { animation-delay: 10s; }
+        .image-slider img:nth-child(4) { animation-delay: 15s; }
+
+        @keyframes slide {
+            0%, 100% { opacity: 0; }
+            5%, 20%  { opacity: 1; transform: translateX(0); }
+            25%, 100% { opacity: 0; transform: translateX(-100%); }
+        }
+
+        /* Sections */
+        .section {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 3em 2.5em;
+            margin: 3em 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5em;
+            margin: 2.5em 0;
+        }
+
+        .media-container video,
+        .media-container iframe {
+            width: 100%;
+            max-width: 480px;
+            height: 320px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5em;
+            margin-top: 2.5em;
+        }
+
+        .team-member {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 1.8em;
+            border-radius: 10px;
+        }
+
+        .team-member img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            margin-bottom: 1em;
+        }
+
+        .team-member h3 {
+            margin: 0.6em 0 0.3em;
+        }
+
+        .team-member .title {
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 1em;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto 3em;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 1.2em 0 0.5em;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1em;
+            border: 1px solid #555;
+            border-radius: 8px;
+            background: #1e3585;
+            color: var(--white);
+            font-size: 1.05em;
+            box-sizing: border-box;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(157, 125, 255, 0.25);
+        }
+
+        .contact-form button {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1.2em 2.5em;
+            font-size: 1.15em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 2em;
+            transition: all 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .contact-form .note {
+            font-size: 0.9em;
+            margin-top: 1.5em;
+            opacity: 0.85;
+            text-align: center;
+        }
+
+        /* Map Embed */
+        .map-embed {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            margin-top: 2em;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2.5em 1em;
+            margin-top: 4em;
+        }
+
+        footer a {
+            color: #d0bfff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img src="logo4.jpg" alt="AGHODEST Logo">
+        <h2>AGHODEST COMPANY LIMITED</h2>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Our Services</a>
+        <a href="#about">About</a>
+        <a href="#team">Executive Team</a>
+        <a href="#board">Board of Directors</a>
+        <a href="#objective">Objective</a>
+        <a href="#contact">Contact us</a>
+        <a href="#apply">Apply Here</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <h1>Innovations in Environmental and Applied Geophysics</h1>
+
+        <div class="marquee">
+            <p>Environmental Audits • Project Management • Environmental Research • Water Quality Monitoring & Remediation • Geophysical Surveys • Sustainability Solutions</p>
+        </div>
+
+        <!-- IMAGE SLIDER -->
+        <div class="image-slider">
+            <img src="image1.jpg" alt="Field environmental sampling and monitoring">
+            <img src="image2.jpg" alt="Water quality analysis in lab">
+            <img src="image3.jpg" alt="Geophysical equipment deployment">
+            <img src="image4.jpg" alt="Team conducting environmental assessment">
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <section class="section" id="about">
+            <h2>Who We Are</h2>
+            <p>AGHODEST COMPANY LIMITED is a leading environmental consulting firm specializing in environmental management, applied geophysics, research, and project management services for private and government institutions worldwide.</p>
+            <p>We are committed to sustainability and innovation, delivering tailored solutions — including water quality monitoring, remediation, environmental audits, and geophysical investigations — to tackle complex challenges in regions such as Toledo, Ohio, the Maumee River watershed, western Lake Erie, and beyond.</p>
+
+            <div class="media-container">
+                <video controls>
+                    <source src="lrg-ghostforests-051519.mp4" type="video/mp4">
+                    <source src="lrg-ghostforests-051519.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+
+                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                        title="Environmental Awareness Video"
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- EXECUTIVE TEAM -->
+        <section class="section" id="team">
+            <h2>Executive Team</h2>
+            <p>Our leadership combines decades of expertise in environmental science, geophysics, project delivery, and sustainable innovation. Meet the team driving AGHODEST forward.</p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="Director Name 3.jpg" alt="CEO - Efemena D. Emmanuel PhD">
+                    <h3>Dr. Efemena Emmanuel </h3>
+                    <div class="title">Founder & CEO</div>
+                    <p>With over 20 years in environmental consulting and applied geophysics, Dr. Emmanuel leads strategic vision and client partnerships across North America and Africa.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="Director Name 2.jpg" alt="CTO - Jane Okoro">
+                    <h3>Jane Okoro, PhD</h3>
+                    <div class="title">Chief Technology Officer</div>
+                    <p>Expert in geophysical modeling and remote sensing technologies. Oversees innovation in water quality sensors and data analytics platforms.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="Director Name 1.jpg" alt="Environmental Director - Michael Rivera">
+                    <h3>Michael Rivera, P.E.</h3>
+                    <div class="title">Director of Environmental Services</div>
+                    <p>Specializes in remediation projects for Lake Erie and industrial sites. Ensures compliance with EPA, Ohio EPA, and international standards.</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="team-pm.jpg" alt="Project Manager - Sarah Kim">
+                    <h3>Sarah Kim, PMP</h3>
+                    <div class="title">Senior Project Manager</div>
+                    <p>Manages multi-disciplinary teams on audits, monitoring programs, and large-scale environmental restorations in the Midwest and beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT + MAP -->
+        <section class="section" id="contact">
+            <h2>Get in Touch</h2>
+            <p style="text-align: center; margin-bottom: 2.5em; font-size: 1.1em;">
+                Ready to discuss your environmental, geophysical, or water quality project? Fill out the form below — we're based in Toledo, Ohio, and serve clients locally and globally.
+            </p>
+
+            <form class="contact-form" action="https://formsubmit.co/your-real-email@example.com" method="POST">
+                <!-- Replace with your actual email -->
+
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name">
+
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+                <label for="phone">Phone Number (optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (419) ...">
+
+                <label for="subject">Subject *</label>
+                <input type="text" id="subject" name="subject" required placeholder="e.g., Water Quality Assessment Inquiry">
+
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="7" required placeholder="Describe your project needs, location, or questions..."></textarea>
+
+                <input type="text" name="_gotcha" style="display:none">
+
+                <button type="submit">Send Message</button>
+
+                <p class="note">We typically respond within 24-48 hours. All communications are treated with the highest confidentiality.</p>
+            </form>
+
+            <h3>Our Location in Toledo, Ohio</h3>
+            <div class="map-embed">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.123456789!2d-83.537867!3d41.652800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b2c4f5f5f5f5f%3A0x1234567890abcdef!2sToledo%2C%20OH%2C%20USA!5e0!3m2!1sen!2sus!4v1690000000000!5m2!1sen!2sus" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p style="text-align: center; margin-top: 1em; font-size: 0.95em;">Toledo, Ohio • Serving the Great Lakes Region and Beyond</p>
+        </section>
+
+<!-- ==================== APPLICATION FORM SECTION ==================== -->
+<section class="section" id="apply">
+    <h2>Application Form</h2>
+    <p style="text-align: center; margin-bottom: 2.5em; font-size: 1.1em;">
+        Join our team! Submit your application below for opportunities in environmental consulting, geophysics, water quality monitoring, and more. We look forward to reviewing your qualifications.
+    </p>
+
+    <form class="contact-form" 
+          action="https://formsubmit.co/your-real-email@example.com" 
+          method="POST" 
+          enctype="multipart/form-data">
+
+        <!-- Personal Information -->
+        <label for="last_name">Last Name *</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required>
+
+        <label for="first_name">First Name *</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required>
+
+        <label for="middle_name">Middle Name (optional)</label>
+        <input type="text" id="middle_name" name="middle_name" placeholder="Enter your middle name">
+
+        <label for="gender">Gender *</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select...</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="e.g., +1 (419) 555-1234" required>
+
+        <!-- Position Applying For -->
+        <label for="position">Applying for Position *</label>
+        <select id="position" name="position" required>
+            <option value="">Select position...</option>
+            <option value="Environmental Scientist">Environmental Scientist</option>
+            <option value="Geophysicist">Geophysicist</option>
+            <option value="Project Manager">Project Manager</option>
+            <option value="Laboratory Technician">Laboratory Technician</option>
+            <option value="Field Technician">Field Technician</option>
+            <option value="Data Analyst">Data Analyst (Environmental/Geophysical)</option>
+            <option value="Other">Other (please specify in cover letter)</option>
+        </select>
+
+        <!-- File Uploads -->
+        <label for="resume">Upload Resume (PDF only) *</label>
+        <input type="file" id="resume" name="resume" accept=".pdf" required>
+
+        <label for="cover_letter">Upload Cover Letter (PDF only) *</label>
+        <input type="file" id="cover_letter" name="cover_letter" accept=".pdf" required>
+
+        <!-- Cover Letter Text (as fallback/optional) -->
+        <label for="cover_message">Cover Letter / Additional Comments (optional)</label>
+        <textarea id="cover_message" name="cover_message" rows="6" placeholder="Paste your cover letter here or provide additional details..."></textarea>
+
+        <!-- Terms Checkbox -->
+        <div style="margin: 1.5em 0;">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions, and confirm that all provided information is accurate.</label>
+        </div>
+
+        <!-- Honeypot for spam -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit">Submit Application</button>
+
+        <p class="note" style="margin-top: 1.5em;">
+            Files are securely handled. You will receive a confirmation email upon successful submission. We typically respond within 5-7 business days.
+        </p>
+    </form>
+</section>
+
+
+        <section class="section placeholder" id="board">
+            <h2>Board of Directors</h2>
+            <p>Coming soon: Details on our Board (currently in Boardteam.html).</p>
+        </section>
+
+        <section class="section placeholder" id="objective">
+            <h2>Our Objectives</h2>
+            <p>Coming soon: Mission, vision, and strategic goals (currently in Objective.html).</p>
+<!-- Objective Section -->
+        <section id="objective">
+            <div id="objective-content">
+            <h2>AGHODEST COMPANY LIMITED OBJECTIVE</h2>
+<p>To carry on business as a consultant in environmental management, environmental research, project management, with all related services locally and internationally.</p>
+<p>To carry on the business of real estate, estate agency, estate surveying and valuation, estate and facility management, project management services, Town Planning, property development and management services, environmental and landscaping services.</p>
+<p>To carry on the business of agriculture, including all related services, fish farming, poultry and sales of agricultural products and equipment, both for the local and international markets.</p>
+<p>To carry on business of dredging, land reclamation, geophysical exploration, drilling, blasting, Soil analysis, mining and quarry, shore nourishment, ocean, harbour and Inland towage, marine salvage, marine construction, subsea structures, surveys and associated work on land, in and under water.</p>
+<p>To carry on, all or any of the business of consultancy services as general construction contractors, architectural drawings, engineering contractors, civil, electrical, and mechanical contractors, builders, masonry, plumbers, hauliers, surveyors and planners, developers and property developers.</p>
+<p>To carry out the business of civil and electrical engineering works, including all related services, both locally and internationally.</p>
+<p>To execute the business acts as merchants, traders, commission agents to import and export goods, wares and general traders, Manufacturers and dealers (suppliers, wholesalers, distributors, retailers) of general commodities.</p>
+        </div>
+        </section>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>AGHODEST COMPANY LIMITED • Toledo, Ohio, USA</p>
+        <p>Email: <a href="mailto:info@aghodest.com">info@aghodest.com</a> • Phone: +1 (419) XXX-XXXX</p>
+        <p>© 2026 AGHODEST COMPANY LIMITED. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
